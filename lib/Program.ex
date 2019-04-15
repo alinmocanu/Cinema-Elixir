@@ -5,9 +5,9 @@ defmodule Program do
         File.open("lib/Program.txt")
         Agent.start_link(fn -> elem(File.read("lib/Program.txt"),1) end, name: __MODULE__)
     end
-
+    
     def value do
-        Agent.get(__MODULE__, & &1)
+        Agent.get(__MODULE__, & IO.puts &1)
     end
 
     def write do
@@ -18,7 +18,7 @@ defmodule Program do
     #imi afiseaza la consola iex ce are fisierul
     def read do
         {:ok,contents} = File.read("lib/Program.txt")
-        contents
+        IO.puts contents
     end
 
     def do_stuff do
