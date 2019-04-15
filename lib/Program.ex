@@ -11,7 +11,6 @@ defmodule Program do
     end
 
     def write do
-
         Agent.update(__MODULE__,&(&1 = elem(File.read("lib/Program.txt"),1)))
     end
 
@@ -25,6 +24,21 @@ defmodule Program do
         Program.start_link #deschide agentul
         Program.write #actualizeaza programul
         Program.value #afiseaza programul la consola
+    end
+
+    def time(0) do
+        Program.do_stuff
+    end
+
+    def time(seconds) do 
+        #IO.write("\r#{seconds}")
+        Process.sleep(1000)
+        time(seconds - 1)
+    end
+
+    def timer(seconds) do
+        time(seconds)
+        timer(seconds)
     end
 end
 
