@@ -21,9 +21,8 @@ defmodule Database do
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
-        IO.puts list
-        maplist = [maplist] ++ [newmap] #= map ++ newmap
-        
+        maplist = maplist ++ [newmap] #= map ++ newmap
+
         get_map(maplist,list)
     end
     def get_map (list) do
@@ -32,8 +31,7 @@ defmodule Database do
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
-        IO.puts list
-        maplist = newmap
+        maplist = [newmap]
 
         get_map(maplist,list)
     end
