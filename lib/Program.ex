@@ -36,7 +36,7 @@ defmodule Program do
         time(seconds - 1)
     end
 
-    def timer(seconds) do
+    def timer(seconds) do #asta apelam, timer(10) de exemplu
         time(seconds)
         timer(seconds)
     end

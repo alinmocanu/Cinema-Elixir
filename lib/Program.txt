@@ -1,7 +1,14 @@
 Titlu
 Data
 Ora
+Sala
 
 Star Wars
 02.02.2019
 20:00
+4
+
+Game of Thrones
+02.02.2019
+21:00
+5
