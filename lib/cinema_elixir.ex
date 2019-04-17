@@ -15,7 +15,9 @@ defmodule CinemaElixir do
   """
   def start(_type,_args) do
     IO.puts "Cinema Elixir started"
-    children = []
+    children = [
+      CinemaElixir.Scheduler
+    ]
     Supervisor.start_link(children, strategy: :one_for_one)
   end
 
