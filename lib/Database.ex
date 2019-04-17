@@ -1,4 +1,34 @@
 defmodule Database do
+    use Agent
+
+    def do_stuff do
+        Database.start
+        Database.update
+        Database.value
+    end
+    def start do
+        Agent.start_link(fn -> %{} end, name: __MODULE__)
+    end
+    
+    def update do
+        data = Database.read
+        Enum.each data, fn(data) -> Database.update_agent(data.titlu) end
+    end
+    
+    def update_agent(movie) do        
+        Agent.update(__MODULE__,fn(state) -> 
+            if Map.get(state,movie) === nil do
+                Map.put(state,movie,1) 
+            else 
+                count = Map.get(state,movie)
+                Map.put(state,movie,count + 1)      
+            end        
+        end)
+    end
+
+    def value do
+        Agent.get(__MODULE__,fn(state) -> state end)
+    end
 
 
     def read do
@@ -6,9 +36,7 @@ defmodule Database do
         contents = contents |> String.split("\r\n", trim: true) #sparge fiecare linie citita separata
         #each Movie has name, date, time
         auxcontent = contents
-
-        maplist = get_map(auxcontent)
-
+        get_map(auxcontent)        
     end
 
     def get_map(maplist,[]) do
@@ -21,8 +49,7 @@ defmodule Database do
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
-        maplist = maplist ++ [newmap] #= map ++ newmap
-
+        maplist = maplist ++ [newmap] 
         get_map(maplist,list)
     end
     def get_map (list) do
@@ -32,7 +59,6 @@ defmodule Database do
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
         maplist = [newmap]
-
         get_map(maplist,list)
     end
 
