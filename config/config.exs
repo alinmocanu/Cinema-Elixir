@@ -5,8 +5,8 @@ use Mix.Config
 config :cinema_elixir, CinemaElixir.Scheduler,
   jobs: [
     # Every minute
-    {"* * * * *",      {CinemaElixir.Scheduler, :schedule_file, []}},
-    {{:cron, "* * * * *"},     {CinemaElixir.Scheduler, :schedule_file, []}},
+ #   {"* * * * *",      {CinemaElixir.Scheduler, :schedule_file, []}},
+  #  {{:cron, "* * * * *"},     {CinemaElixir.Scheduler, :schedule_file, []}},
   ]
 
 # This configuration is loaded before any dependency and is restricted
