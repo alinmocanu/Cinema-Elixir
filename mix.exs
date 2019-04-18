@@ -14,7 +14,7 @@ defmodule CinemaElixir.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:quantum, :extwitter],
+      extra_applications: [:logger, :quantum, :extwitter],
       mod: {CinemaElixir,[]}
     ]
   end
