@@ -20,8 +20,8 @@ defmodule Sali do
         GenServer.call(pid, :view)
     end
 
-    def remove(pid,item) do
-        GenServer.cast(pid, {:remove, item})
+    def empty(pid) do
+        GenServer.cast(pid, :remove)
     end
 
     def stop(pid) do
@@ -31,12 +31,12 @@ defmodule Sali do
     #server
     
     def terminate(_reason, map) do
-        IO.puts("We are all done shopping.")
+        IO.puts("Process Sali terminated. The map is:")
         IO.inspect(map)
         :ok
     end
-    def handle_cast({:remove, item}, map) do
-        updated_map = Enum.reject(map, fn(i) -> i == item end)
+    def handle_cast(:remove, _map) do
+        updated_map = Map.new()
         {:noreply, updated_map}
     end
     
@@ -50,9 +50,7 @@ defmodule Sali do
     end
     def init(map) do
         {:ok, map}
-    end
-
-    
+    end    
 
 end
 
