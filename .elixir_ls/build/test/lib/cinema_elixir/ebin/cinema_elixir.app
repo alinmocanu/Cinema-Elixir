@@ -3,7 +3,7 @@
               {description,"cinema_elixir"},
               {modules,['Elixir.CinemaElixir','Elixir.Database','Elixir.God',
                         'Elixir.PlanificareSali','Elixir.Program',
-                        'Elixir.Sali']},
+                        'Elixir.Sali','Elixir.Saliprogram']},
               {registered,[]},
               {vsn,"0.1.0"},
               {mod,{'Elixir.CinemaElixir',[]}}]}.

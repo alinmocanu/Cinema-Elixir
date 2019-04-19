@@ -6,12 +6,7 @@ defmodule Database do
         Database.update
         Database.value
     end
-
-    def sali(data_film, ora_film) do #Database.sali("02.02.2019,"21:00") - toate filmele care ruleaza la data si ora aia
-        Database.start
-        Database.update_sali(data_film, ora_film)
-        Database.value
-    end
+    
     def start do
         Agent.start_link(fn -> %{} end, name: __MODULE__)
     end
@@ -31,48 +26,10 @@ defmodule Database do
             end        
         end)
     end
-
-    def update_sali(data_film, ora_film) do
-        list = Database.read
-        Enum.each list, fn(list) -> 
-            if list.data == data_film and list.ora == ora_film do
-                Database.update_agent_sali(list.sala, list.titlu) 
-            else
-            end
-        end
-    end
     
-    def update_agent_sali(sala, titlu) do        
-        Agent.update(__MODULE__,fn(state) ->             
-                Map.put(state,sala,titlu)                                   
-        end)
-    end
-
     def value do
         Agent.get(__MODULE__,fn(state) -> state end)
     end
-
-    #Functie vecheee, probabil nu mai e nevoie de ea
-    # def get_movies(data_film, ora_film) do 
-    #     list = Database.read
-    #     map = %{}
-    #     Enum.each list, fn(list) ->
-    #         if list.data == data_film and list.ora == ora_film do
-    #             IO.puts list.data
-    #             IO.puts list.ora
-    #             IO.puts list.sala
-    #             IO.puts Map.get(list, :titlu)
-    #             IO.puts Macro.to_string(quote do: unquote(list.titlu))
-    #             map = Map.put(map, Map.get(list, :sala), Map.get(list, :titlu))
-    #             map = Map.put(map, Macro.to_string(quote do: unquote(list.sala)), Macro.to_string(quote do: unquote(list.titlu)))
-    #             map = Map.put(map, list.sala, list.titlu)
-    #             IO.puts true                
-    #         else
-    #             IO.puts false
-    #         end
-    #     end
-    #     map
-    # end
 
     def read do
         {:ok,contents} = File.read("lib/Program.txt")
