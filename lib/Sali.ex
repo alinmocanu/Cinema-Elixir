@@ -3,29 +3,30 @@ defmodule Sali do
     
     def do_stuff do
         {:ok,pid} = Sali.start
-        Sali.add(pid,"02.02.2019","21:00")
-        Sali.view(pid)
+        Sali.add("02.02.2019","21:00")
+        map = Sali.view
+        Sali.stop
         #Process.alive?(pid)
     end
     #client
     def start do #runs in the caller context client
-        GenServer.start_link(__MODULE__,%{})
+        GenServer.start_link(__MODULE__,%{}, name: :sali_server)
     end
     
-    def add(pid,date,time) do
-        GenServer.cast(pid, {date,time})
+    def add(date,time) do
+        GenServer.cast(:sali_server, {date,time})
     end
 
-    def view(pid) do
-        GenServer.call(pid, :view)
+    def view do
+        GenServer.call(:sali_server, :view)
     end
 
-    def empty(pid) do
-        GenServer.cast(pid, :remove)
+    def empty do
+        GenServer.cast(:sali_server, :remove)
     end
 
-    def stop(pid) do
-        GenServer.stop(pid,:normal,:infinity)
+    def stop do
+        GenServer.stop(:sali_server,:normal,:infinity)
     end
 
     #server

@@ -3,7 +3,7 @@ defmodule CinemaElixir.Scheduler do
      otp_app: :cinema_elixir
     def schedule_file() do
  
-      hashtag = CinemaElixir.FileReader.get_hashtag("C:\\Users\\Cosmin Alex\\Desktop\\Cinema-Elixir\\lib\\cinemaelixir_tweet\\movie_quotes.txt")
+      hashtag = CinemaElixir.FileReader.get_hashtag("C:\\Users\\Costy\\Desktop\\cinema_elixir\\lib\\cinemaelixir_tweet\\movie_quotes.txt")
         CinemaElixir.ReadTweets.get_tweets(hashtag)
         |> CinemaElixir.TweetServer.tweet
     end
