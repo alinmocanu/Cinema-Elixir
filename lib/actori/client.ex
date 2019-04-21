@@ -9,8 +9,11 @@ defmodule Client do
         if bani > 15 do
             film = MovieDatabase.get |> Enum.random()
             bilet = MovieDatabase.update_seats_number(film)
-        else
+            bani = bani - 15
+
         end
+
+        send(pid_controlor, bilet);
     end
 
     def start_program(nr_spectatori, validare) do
