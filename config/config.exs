@@ -12,7 +12,7 @@ config :extwitter, :oauth, [
 config :cinema_elixir, CinemaElixir.Scheduler,
   jobs: [
     # Every minute
-    {"* * * * *",      {CinemaElixir.Scheduler, :schedule_file, []}},
+    {"*/15 * * * *",      {CinemaElixir.Scheduler, :schedule_file, []}},
   ]
  # jobs: [
     # Every minute
