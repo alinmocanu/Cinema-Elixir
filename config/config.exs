@@ -2,6 +2,24 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
+config :extwitter, :oauth, [
+  consumer_key: "aooVGJHUBS9hpm5QOPr9Ry8KO",
+  consumer_secret: "GYyjyEsjtyAos157VsBFCHikdwQqgeMZxvsb9R5OPX9vYRWbt8",
+  access_token: "1118479713373171712-ORHE6KqohPvhqk3o2e20KKNAScfJK1",
+  access_token_secret: "VZyGdqhRCJ4awKez5rLpGi6KXJgMquoX6pGcSzeOKO86X"
+]
+
+config :cinema_elixir, CinemaElixir.Scheduler,
+  jobs: [
+    # Every minute
+    {"* * * * *",      {CinemaElixir.Scheduler, :schedule_file, []}},
+  ]
+ # jobs: [
+    # Every minute
+ #   {"* * * * *",      {CinemaElixir.Scheduler, :schedule_file, []}},
+  #  {{:cron, "* * * * *"},     {CinemaElixir.Scheduler, :schedule_file, []}},
+  #]
+
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
