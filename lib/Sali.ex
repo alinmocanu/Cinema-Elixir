@@ -2,9 +2,9 @@ defmodule Sali do
     use GenServer    
     
     def do_stuff do
-        {:ok,pid} = Sali.start
+        Sali.start
         Sali.add("02.02.2019","21:00")
-        map = Sali.view
+        Sali.view
         Sali.stop
         #Process.alive?(pid)
     end
