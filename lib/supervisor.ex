@@ -8,7 +8,8 @@ defmodule CinemaElixir.Supervisor do
     def init([]) do
   
       children = [
-        worker(CinemaElixir.TweetServer, [CinemaElixir.TweetServer], restart: :permanent),
+        worker(AdaugFilme, [AdaugFilme], restart: :permanent),
+       
       ]
       supervise(children, [strategy: :one_for_all, max_restarts: 5, max_seconds: 10])
     end
