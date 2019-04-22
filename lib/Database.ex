@@ -48,7 +48,7 @@ defmodule Database do
                    :data => elem(List.pop_at(list,1),0),
                    :ora => elem(List.pop_at(list,2),0), 
                    :sala => elem(List.pop_at(list,3),0),
-                   :varsta =>elem(List.pop_at(list,4),0),
+                   :varsta =>String.to_integer(elem(List.pop_at(list,4),0)),
                    :locuri => 5}
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
@@ -63,7 +63,7 @@ defmodule Database do
                    :data => elem(List.pop_at(list,1),0), 
                    :ora => elem(List.pop_at(list,2),0), 
                    :sala => elem(List.pop_at(list,3),0), 
-                   :varsta =>elem(List.pop_at(list,4),0),
+                   :varsta =>String.to_integer(elem(List.pop_at(list,4),0)),
                    :locuri => 5}
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)

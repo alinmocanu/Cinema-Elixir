@@ -39,7 +39,7 @@ use Agent
             new_movie = Map.replace!(current_movie, :locuri,  nr_locuri_actuale-1)
             Agent.update(:database_structure, fn(state)-> List.update_at(state, index,&(&1 = new_movie)) end)
         else
-            valid = 0
+            valid = -1
         end
         valid 
     end

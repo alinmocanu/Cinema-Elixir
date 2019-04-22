@@ -5,9 +5,10 @@ defmodule AccesGuard do
 
     end
 
-    def control(bilet, nume, varsta) do
-        client = Process.whereis(String.to_atom(nume))
-        if bilet <= varsta do
+    def control(nume, prenume, bilet, varsta) do
+        pid_name = nume<>prenume<>Integer.to_string(varsta)
+        client = Process.whereis(String.to_atom(pid_name))
+        if varsta >= bilet do
             IO.puts("Vizionare placuta!")
         else
             IO.puts("Ati fost identificat fraudand sistemul!")
@@ -17,7 +18,7 @@ defmodule AccesGuard do
 
     def init(nume) do
         receive do 
-            {bilet, nume, varsta} -> control(bilet, nume, varsta)
+            {nume, prenume, bilet, varsta} -> control(nume, prenume, bilet, varsta)
         end
         init(nume)
     end
