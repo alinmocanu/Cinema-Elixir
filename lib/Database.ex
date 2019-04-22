@@ -44,7 +44,13 @@ defmodule Database do
     end
 
     def get_map(maplist,list) do
-        newmap = %{:titlu => elem(List.pop_at(list,0),0), :data => elem(List.pop_at(list,1),0), :ora => elem(List.pop_at(list,2),0), :sala => elem(List.pop_at(list,3),0), :locuri => 5}
+        newmap = %{:titlu => elem(List.pop_at(list,0),0),
+                   :data => elem(List.pop_at(list,1),0),
+                   :ora => elem(List.pop_at(list,2),0), 
+                   :sala => elem(List.pop_at(list,3),0),
+                   :varsta =>elem(List.pop_at(list,4),0),
+                   :locuri => 5}
+        list=List.delete_at(list,0)
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
@@ -53,7 +59,13 @@ defmodule Database do
         get_map(maplist,list)
     end
     def get_map (list) do
-        newmap = %{:titlu => elem(List.pop_at(list,0),0), :data => elem(List.pop_at(list,1),0), :ora => elem(List.pop_at(list,2),0), :sala => elem(List.pop_at(list,3),0), :locuri => 5}
+        newmap = %{:titlu => elem(List.pop_at(list,0),0),
+                   :data => elem(List.pop_at(list,1),0), 
+                   :ora => elem(List.pop_at(list,2),0), 
+                   :sala => elem(List.pop_at(list,3),0), 
+                   :varsta =>elem(List.pop_at(list,4),0),
+                   :locuri => 5}
+        list=List.delete_at(list,0)
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
         list=List.delete_at(list,0)
