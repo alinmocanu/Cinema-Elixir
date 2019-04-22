@@ -2,28 +2,24 @@ defmodule CinemaElixir.FileReader do
     use Agent 
 
     def start(path) do
-        Agent.start_link(fn->%{} end, name: __MODULE__)
-        CinemaElixir.FileReader.update(path)
-        CinemaElixir.FileReader.value
+        Agent.start_link(fn->CinemaElixir.FileReader.get_hashtags(path) end, name: :hashtags)
     end
 
-
-    def value do
-        Agent.get(__MODULE__,& &1)
+    def get do
+        Agent.get(:hashtags, fn(state) -> state end)
     end
 
-    def update(path) do
-        data = CinemaElixir.FileReader.get_hashtag(path)
-        Agent.update(__MODULE__, &(&1=data))
+    def get_hashtag do
+        CinemaElixir.FileReader.get |> Enum.random()
     end
 
+    def update(hashtag) do
+        Agent.update(:hashtags, fn(state)-> state = [hashtag| state] end)
+    end
 
-
-    def get_hashtag(path) do
+    def get_hashtags(path) do
         File.read!(path)
-        |>String.split("\n") #facem split pe baza delimitatorului de linie
-        |>Enum.map(&String.trim/1) #eliminamm spațiile albe
-        |>Enum.random()
-
+        |>String.split("\n") 
+        |>Enum.map(&String.trim/1) 
     end
 end

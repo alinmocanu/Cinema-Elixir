@@ -3,6 +3,7 @@ use Agent
     def start do
         Agent.start_link(fn -> Database.read end, name: :database_structure )
     end
+    
     def get do
         Agent.get(:database_structure, fn(state) -> state end)
     end

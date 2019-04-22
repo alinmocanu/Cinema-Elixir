@@ -35,11 +35,17 @@ defmodule AdaugFilme do
         movieDate = IO.gets(" Data (2015-01-23): ")
         movieHour = IO.gets(" Ora (23:59): ")
         movieHall = IO.gets(" Sala: ")
+        movieAgeLimit = IO.gets( "Age limit: ")
+        movieHashtag = IO.gets("Hashtag: ")
 
         File.write("lib/Program.txt", "\n" <> movieTitle, [:append]) |> IO.inspect
         File.write("lib/Program.txt", movieDate, [:append]) |> IO.inspect
         File.write("lib/Program.txt", movieHour, [:append]) |> IO.inspect
         File.write("lib/Program.txt", movieHall, [:append]) |> IO.inspect
+        File.write("lib/Program.txt", movieAgeLimit, [:append]) |> IO.inspect
+        File.write("lib/cinemaelixir_tweet/movie_quotes.txt", movieHashtag, [:append]) |> IO.inspect
+
+        
 
         GenServer.start_link(__MODULE__, [name: name])
     
