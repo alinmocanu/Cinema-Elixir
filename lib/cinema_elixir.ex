@@ -8,7 +8,7 @@ defmodule CinemaElixir do
 
     MovieDatabase.start
     CinemaElixir.FileReader.start("lib\\cinemaelixir_tweet\\movie_quotes.txt")
-    #CinemaElixir.Supervisor.start_link()
+    CinemaElixir.Supervisor.start_link()
 
     # Define workers and child supervisors to be supervised
     children = [

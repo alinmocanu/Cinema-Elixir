@@ -46,7 +46,7 @@ defmodule AdaugFilme do
         File.write("lib/cinemaelixir_tweet/movie_quotes.txt", movieHashtag, [:append]) |> IO.inspect
 
         CinemaElixir.FileReader.update(movieHashtag)
-        MovieDataBase.add_movie_to_database(movieTitle, movieHour, movieDate, movieHall, movieAgeLimit)
+        MovieDatabase.add_movie_to_database(movieTitle, movieHour, movieDate, movieHall, movieAgeLimit)
 
         
 
