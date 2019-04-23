@@ -11,6 +11,6 @@ defmodule CinemaElixir.Supervisor do
         worker(AdaugFilme, [AdaugFilme], restart: :permanent),
        
       ]
-      supervise(children, [strategy: :one_for_all, max_restarts: 5, max_seconds: 10])
+      supervise(children, [strategy: :one_for_one, max_restarts: 5, max_seconds: 1000])
     end
   end
