@@ -3,10 +3,10 @@
 use Mix.Config
 
 config :extwitter, :oauth, [
-  consumer_key: "aooVGJHUBS9hpm5QOPr9Ry8KO",
-  consumer_secret: "GYyjyEsjtyAos157VsBFCHikdwQqgeMZxvsb9R5OPX9vYRWbt8",
-  access_token: "1118479713373171712-ORHE6KqohPvhqk3o2e20KKNAScfJK1",
-  access_token_secret: "VZyGdqhRCJ4awKez5rLpGi6KXJgMquoX6pGcSzeOKO86X"
+  consumer_key: "GbvLKjl0NFgzlr1wJj7tRTSh5",
+  consumer_secret: "YGZKwPdD15eiZJJIgb4Gt8WKyye8jBOHlcJcxWdF4Y08jIW2FQ",
+  access_token: "1118479713373171712-qaqBSjYEja0bnKq32rTlsCLMqW5l1X",
+  access_token_secret: "z8IR0La06dPJhZmpwTySwRf5P8GdtI3fd3oPINKHTPcBr"
 ]
 
 config :cinema_elixir, CinemaElixir.Scheduler,
