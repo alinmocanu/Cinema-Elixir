@@ -47,7 +47,7 @@ defmodule AdaugFilme do
 
         CinemaElixir.FileReader.update(movieHashtag)
         MovieDatabase.add_movie_to_database(movieTitle, movieHour, movieDate, movieHall, movieAgeLimit)
-     
+
         GenServer.start_link(__MODULE__, [name: name])
     
       end
