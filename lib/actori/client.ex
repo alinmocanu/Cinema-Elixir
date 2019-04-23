@@ -18,7 +18,7 @@ defmodule Client do
                 IO.puts "Nu mai sunt bilete"
             end
         else 
-            IO.puts "Fonduri insuficiente"
+            IO.puts "#{nume} #{prenume} ai fonduri insuficiente"
         end
    
         receive do 

@@ -56,7 +56,7 @@ defmodule CinemaElixir.Meniu do
         Client.client("Mocanu", "Alin", 20, 24)
         Client.client("Mocanu", "Sorin", 14, 20)
         Client.client("Alexandru", "Cosmin", 25, 10)
-        CinemaElixir.Meniu.start
+        :timer.sleep(3000)
     end
 
 end
