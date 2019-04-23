@@ -42,10 +42,13 @@ defmodule CinemaElixir.Meniu do
     end
 
     def statistics do
-      Database.start
-      Database.value
+        IO.inspect(Database.do_stuff)
     end
 
+    def informations do 
+        IO.inspect(Database.read)
+    end
+    
     def sali do
         data = IO.gets(" Data: ")|>String.split("\n") 
         ora = IO.gets(" Ora: ")|>String.split("\n") 
