@@ -6,10 +6,9 @@ defmodule Sali do
         Sali.add("02.02.2019","21:00")
         Sali.view
         Sali.stop
-        #Process.alive?(pid)
     end
     #client
-    def start do #runs in the caller context client
+    def start do 
         GenServer.start_link(__MODULE__,%{}, name: :sali_server)
     end
     

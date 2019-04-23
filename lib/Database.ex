@@ -33,8 +33,7 @@ defmodule Database do
 
     def read do
         {:ok,contents} = File.read("lib/Program.txt")
-        contents = contents |> String.split("\r\n", trim: true) #sparge fiecare linie citita separata
-        #each Movie has name, date, time, room
+        contents = contents |> String.split("\r\n", trim: true) 
         auxcontent = contents
         get_map(auxcontent)        
     end

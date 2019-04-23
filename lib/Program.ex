@@ -14,16 +14,15 @@ defmodule Program do
         Agent.update(__MODULE__,&(&1 = elem(File.read("lib/Program.txt"),1)))
     end
 
-    #imi afiseaza la consola iex ce are fisierul
     def read do
         {:ok,contents} = File.read("lib/Program.txt")
         IO.puts contents
     end
 
     def do_stuff do
-        Program.start_link #deschide agentul
-        Program.write #actualizeaza programul
-        Program.value #afiseaza programul la consola
+        Program.start_link 
+        Program.write 
+        Program.value 
     end
 
     def time(0) do
@@ -41,10 +40,3 @@ defmodule Program do
         timer(seconds)
     end
 end
-
-# Program.start_link(0)
-
-# Program.value     #=> 0
-# Program.increment #=> :ok
-# Program.increment #=> :ok
-# Program.value     #=> 2
