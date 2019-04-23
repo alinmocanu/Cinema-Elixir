@@ -5,3 +5,7 @@
 #starWarssca
 af
 
+nou
+hash
+test
+ultimul

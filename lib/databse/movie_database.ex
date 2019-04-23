@@ -33,11 +33,12 @@ use Agent
     def update_seats_number(movie) do
         valid = MovieDatabase.get_age_limit(movie)
         nr_locuri_actuale = MovieDatabase.get_current_seats_number(movie)
-        if nr_locuri_actuale > 0 do
+        valid = if nr_locuri_actuale > 0 do
             index = Enum.find_index(MovieDatabase.get, fn x -> Map.equal?(x, movie) end )
             current_movie = Enum.at(MovieDatabase.get, index)
             new_movie = Map.replace!(current_movie, :locuri,  nr_locuri_actuale-1)
             Agent.update(:database_structure, fn(state)-> List.update_at(state, index,&(&1 = new_movie)) end)
+            valid
         else
             valid = -1
         end
