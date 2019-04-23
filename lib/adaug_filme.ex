@@ -32,7 +32,7 @@ defmodule AdaugFilme do
       def start_link do
         GenServer.start_link(__MODULE__, [name: :add_movie])
         movieTitle = IO.gets(" Titlu: ")
-        movieDate = IO.gets(" Data (2015-01-23): ")
+        movieDate = IO.gets(" Data (02.02.2019): ")
         movieHour = IO.gets(" Ora (23:59): ")
         movieHall = IO.gets(" Sala: ")
         movieAgeLimit = IO.gets( " Limita varsta: ")
