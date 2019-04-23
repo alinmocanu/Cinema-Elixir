@@ -13,6 +13,7 @@ defmodule Database do
     
     def update do
         data = Database.read
+        Agent.update(__MODULE__,fn(state) -> %{} end)
         Enum.each data, fn(data) -> Database.update_agent(data.titlu) end
     end
     

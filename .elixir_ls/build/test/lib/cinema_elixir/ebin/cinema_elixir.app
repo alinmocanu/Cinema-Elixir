@@ -11,9 +11,8 @@
                         'Elixir.CinemaElixir.Supervisor',
                         'Elixir.CinemaElixir.Tweet',
                         'Elixir.CinemaElixir.TweetServer','Elixir.Client',
-                        'Elixir.Database','Elixir.God','Elixir.MovieDatabase',
-                        'Elixir.PlanificareSali','Elixir.Program',
-                        'Elixir.Sali','Elixir.SaliProgram']},
+                        'Elixir.Database','Elixir.MovieDatabase',
+                        'Elixir.Program','Elixir.Sali','Elixir.SaliProgram']},
               {registered,[]},
               {vsn,"0.1.0"},
               {mod,{'Elixir.CinemaElixir',[]}}]}.
