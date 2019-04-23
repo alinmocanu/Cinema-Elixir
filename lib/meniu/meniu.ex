@@ -42,9 +42,9 @@ defmodule CinemaElixir.Meniu do
     end
 
     def sali do
-        #data = IO.gets(" Data: ")|>String.split("\n") 
-        #ora = IO.gets(" Ora: ")|>String.split("\n") 
-        Sali.do_stuff#(data,ora) #"02.02.2019","21:00"
+        data = IO.gets(" Data: ")|>String.split("\n") 
+        ora = IO.gets(" Ora: ")|>String.split("\n") 
+        Sali.do_stuff(hd(data),hd(ora)) #"02.02.2019","21:00"
     end
 
     def insert_movie do
