@@ -5,7 +5,7 @@ defmodule CinemaElixir.Meniu do
         IO.puts "1. Display cinema program"
         IO.puts "2. Insert movie"
         IO.puts "3. Simulate actors"
-        IO.puts "4. Movies in halls for date and time"
+        IO.puts "4. Cinema Program for date and time"
         option = IO.gets(" Option: ")|>String.split("\n") 
                                      
         opt_int = String.to_integer(hd(option))
