@@ -5,7 +5,10 @@ defmodule CinemaElixir.Meniu do
         IO.puts "1. Display cinema program"
         IO.puts "2. Insert movie"
         IO.puts "3. Simulate actors"
-        IO.puts "4. Cinema Program for date and time"
+        IO.puts "4. Cinema Statistics"
+        IO.puts "5. Cinema Program for date and time"
+        IO.puts "6. Exit"
+
         option = IO.gets(" Option: ")|>String.split("\n") 
                                      
         opt_int = String.to_integer(hd(option))
@@ -39,7 +42,8 @@ defmodule CinemaElixir.Meniu do
     end
 
     def statistics do
-        Database.do_stuff
+      Database.start
+      Database.value
     end
 
     def sali do
