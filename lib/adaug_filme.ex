@@ -29,8 +29,8 @@ defmodule AdaugFilme do
         end
       end
 
-      def start_link(name ) do
-
+      def start_link do
+        GenServer.start_link(__MODULE__, [name: :add_movie])
         movieTitle = IO.gets(" Titlu: ")
         movieDate = IO.gets(" Data (2015-01-23): ")
         movieHour = IO.gets(" Ora (23:59): ")
@@ -43,12 +43,10 @@ defmodule AdaugFilme do
         File.write("lib/Program.txt", movieHour, [:append]) |> IO.inspect
         File.write("lib/Program.txt", movieHall, [:append]) |> IO.inspect
         File.write("lib/Program.txt", movieAgeLimit, [:append]) |> IO.inspect
-        File.write("lib/cinemaelixir_tweet/movie_quotes.txt", movieHashtag, [:append]) |> IO.inspect
+        File.write("lib/cinemaelixir_tweet/movie_quotes.txt","\n\n"<> movieHashtag, [:append]) |> IO.inspect
 
         CinemaElixir.FileReader.update(movieHashtag)
-        MovieDatabase.add_movie_to_database(movieTitle, movieHour, movieDate, movieHall, movieAgeLimit)
-     
-        GenServer.start_link(__MODULE__, [name: name])
+        MovieDatabase.add_movie_to_database(movieTitle, movieHour, movieDate, movieHall, movieAgeLimit
     
       end
 
