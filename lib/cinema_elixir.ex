@@ -8,7 +8,6 @@ defmodule CinemaElixir do
 
     MovieDatabase.start
     CinemaElixir.FileReader.start("lib\\cinemaelixir_tweet\\movie_quotes.txt")
-    # CinemaElixir.Supervisor.start_link()
     CinemaElixir.Meniu.start
 
     # Define workers and child supervisors to be supervised
@@ -16,7 +15,6 @@ defmodule CinemaElixir do
       # Starts a worker by calling: PluralsightTweet.Worker.start_link(arg1, arg2, arg3)
       worker(CinemaElixir.TweetServer, []),
       worker(CinemaElixir.Scheduler, []),
-      # worker(CinemaElixir.Supervisor, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

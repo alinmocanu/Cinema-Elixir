@@ -9,9 +9,9 @@ defmodule AccesGuard do
         pid_name = nume<>prenume<>Integer.to_string(varsta)
         client = Process.whereis(String.to_atom(pid_name))
         if varsta >= bilet do
-            IO.puts("Vizionare placuta!")
+            IO.puts("Vizionare placuta, #{nume<>" "<>prenume}!")
         else
-            IO.puts("Ati fost identificat fraudand sistemul!")
+            IO.puts("#{nume<>" "<>prenume} ai fost identificat fraudand sistemul!")
             send(client, {bilet})
         end
     end
