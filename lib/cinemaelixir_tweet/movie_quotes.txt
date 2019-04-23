@@ -2,10 +2,5 @@
 #got
 #cinemaElixir
 #avengers
-#starWarssca
-af
+#starWars
 
-nou
-hash
-test
-ultimul
