@@ -2,7 +2,7 @@ defmodule Database do
     use Agent
 
     def do_stuff do #Database.do_stuff - face statistica, numara fiecare film de cate ori ruleaza
-        #Database.start
+        Database.start
         Database.update
         Database.value
     end
