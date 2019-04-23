@@ -29,14 +29,14 @@ defmodule AdaugFilme do
       movieHour = IO.gets(" Ora (23:59): ")
       movieHall = IO.gets(" Sala: ")
       movieAgeLimit = IO.gets( " Limita varsta: ")
-      movieHashtag = IO.gets(" Hashtag: ")
+      movieHashtag = IO.gets(" Hashtag (#exemplu): ")
 
       File.write("lib/Program.txt", "\n\n" <> movieTitle, [:append]) |> IO.inspect
       File.write("lib/Program.txt", movieDate, [:append]) |> IO.inspect
       File.write("lib/Program.txt", movieHour, [:append]) |> IO.inspect
       File.write("lib/Program.txt", movieHall, [:append]) |> IO.inspect
       File.write("lib/Program.txt", movieAgeLimit, [:append]) |> IO.inspect
-      File.write("lib/cinemaelixir_tweet/movie_quotes.txt", "#" <> movieHashtag, [:append]) |> IO.inspect
+      File.write("lib/cinemaelixir_tweet/movie_quotes.txt", movieHashtag, [:append]) |> IO.inspect
 
       CinemaElixir.FileReader.update(movieHashtag)
       MovieDatabase.add_movie_to_database(movieTitle, movieHour, movieDate, movieHall, movieAgeLimit)
