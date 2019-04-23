@@ -43,8 +43,4 @@ defmodule AdaugFilme do
 
     
       end
-
-      def functie() do
-      end
-
 end
