@@ -1,6 +1,13 @@
 defmodule Sali do
     use GenServer    
     
+    def do_stuff(data,ora) do
+        Sali.start
+        Sali.add(data,ora) #("02.02.2019","21:00")
+        Sali.view
+        Sali.stop
+    end
+
     def do_stuff do
         Sali.start
         Sali.add("02.02.2019","21:00")
