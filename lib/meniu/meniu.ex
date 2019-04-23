@@ -11,12 +11,21 @@ defmodule CinemaElixir.Meniu do
         
         case opt_int do 
             1 -> CinemaElixir.Meniu.display_program
+                 CinemaElixir.Meniu.start
             2 -> CinemaElixir.Meniu.insert_movie
+                CinemaElixir.Meniu.start
             3 -> CinemaElixir.Meniu.simulate_actors
+                CinemaElixir.Meniu.start
+            4 -> CinemaElixir.Meniu.statistics
+                CinemaElixir.Meniu.start
+            5 -> CinemaElixir.Meniu.sali
+                CinemaElixir.Meniu.start            
+            6 -> IO.puts("get out")
             _ -> CinemaElixir.Meniu.invalid_option
+                CinemaElixir.Meniu.start
         end
 
-        CinemaElixir.Meniu.start
+        #CinemaElixir.Meniu.start
     end
 
     def invalid_option do
@@ -24,8 +33,18 @@ defmodule CinemaElixir.Meniu do
         CinemaElixir.Meniu.start
     end
 
-    def diplay_program do
-        
+    def display_program do
+        Program.do_stuff
+    end
+
+    def statistics do
+        Database.do_stuff
+    end
+
+    def sali do
+        data = IO.gets(" Data: ")|>String.split("\n") 
+        ora = IO.gets(" Ora: ")|>String.split("\n") 
+        Sali.do_stuff(data,ora) #"02.02.2019","21:00"
     end
 
     def insert_movie do
