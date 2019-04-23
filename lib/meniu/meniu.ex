@@ -2,7 +2,7 @@ defmodule CinemaElixir.Meniu do
     def start do 
         IO.puts "--------------------Cinema  Elixir------------------\n"
         IO.puts "Available options \n"
-        IO.puts "1. Display cinema program"
+        IO.puts "1. Display Cinema Database"
         IO.puts "2. Insert movie"
         IO.puts "3. Simulate actors"
         IO.puts "4. Cinema Statistics"
