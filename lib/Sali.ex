@@ -38,7 +38,7 @@ defmodule Sali do
     #server
     
     def terminate(_reason, map) do
-        IO.puts("Process Sali terminated. The map is:")
+        IO.puts("Sali terminated. The map is:")
         IO.inspect(map)
         :ok
     end
