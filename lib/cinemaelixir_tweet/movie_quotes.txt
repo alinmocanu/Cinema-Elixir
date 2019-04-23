@@ -2,15 +2,6 @@
 #got
 #cinemaElixir
 #avengers
-<<<<<<< HEAD
-#starWars
-=======
-#starWars
+#starWarssca
+af
 
->>>>>>> e70edf0803ddbc81368fc1271cf70b815bf5e5fe
-
-
-asd
-
-
-asda

@@ -5,6 +5,7 @@
               {modules,['Elixir.AccesGuard','Elixir.AdaugFilme',
                         'Elixir.CinemaElixir',
                         'Elixir.CinemaElixir.FileReader',
+                        'Elixir.CinemaElixir.Meniu',
                         'Elixir.CinemaElixir.ReadTweets',
                         'Elixir.CinemaElixir.Scheduler',
                         'Elixir.CinemaElixir.Supervisor',
